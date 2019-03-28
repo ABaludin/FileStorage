@@ -5,7 +5,7 @@ page 50103 "MME Blob Content Preview"
     UsageCategory = Administration;
     SourceTable = "MME BlobStorage Blob";
     SourceTableTemporary = true;
-    Caption = 'Blob Information';
+    Caption = 'Demo 2 Blob Information';
 
     layout
     {

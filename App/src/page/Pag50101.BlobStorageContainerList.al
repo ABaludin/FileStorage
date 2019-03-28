@@ -5,7 +5,7 @@ page 50101 "MME BlobStorage Container List"
     UsageCategory = Administration;
     SourceTable = "MME BlobStorage Container";
     SourceTableTemporary = true;
-    Caption = 'Blob Storage Container List';
+    Caption = 'Demo 2 Blob Storage Container List';
     InsertAllowed = false;
     DeleteAllowed = false;
     Editable = false;

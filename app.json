@@ -1,0 +1,24 @@
+{
+  "id": "90156f80-a458-4c21-a99f-ebfbed104c4d",
+  "name": "Demo 2 File Storage",
+  "publisher": "Andrey Baludin",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "dalogo.png",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "features": ["TranslationFile"],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 50100,
+    "to": 50110
+  },
+  "runtime": "2.0"
+}

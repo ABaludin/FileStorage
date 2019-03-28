@@ -2,7 +2,7 @@ page 50102 "MME BlobStorage Blob List"
 {
     PageType = List;
     SourceTable = "MME BlobStorage Blob";
-    Caption = 'Blob Storage Blob List';
+    Caption = 'Demo 2 Blob Storage Blob List';
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTableTemporary = true;
@@ -110,9 +110,9 @@ page 50102 "MME BlobStorage Blob List"
 
     local procedure UploadFile()
     var
+        blogServiceAPI: Codeunit "MME Blob Service API";
         fileName: Text;
         stream: InStream;
-        blogServiceAPI: Codeunit "MME Blob Service API";
     begin
         if UploadIntoStream('Upload File', '', '', fileName, stream) then
             if blogServiceAPI.PutBlob(Container, fileName, stream) then
@@ -121,9 +121,10 @@ page 50102 "MME BlobStorage Blob List"
 
     local procedure DownloadFile()
     var
+        blogServiceAPI: Codeunit "MME Blob Service API";
         fileName: Text;
         stream: InStream;
-        blogServiceAPI: Codeunit "MME Blob Service API";
+
     begin
         fileName := Name.Replace('/', '_');
         if blogServiceAPI.GetBlob(Container, Name, stream) then

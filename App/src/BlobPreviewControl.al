@@ -11,10 +11,10 @@ controladdin BlobPreviewControl
     HorizontalStretch = true;
     HorizontalShrink = true;
     Scripts =
-        './src/control/js/BlobPreview.js';
+        './App/src/control/js/BlobPreview.js';
     StyleSheets =
-        './src/control/css/style.css';
-    StartupScript = './src/control/js/BlobPreview.startup.js';
+        './App/src/control/css/style.css';
+    StartupScript = './App/src/control/js/BlobPreview.startup.js';
 
     // The event is raised from Control AddIn, when it is loaded and ready to use from AL
     event OnInitialized()

@@ -14,8 +14,8 @@ codeunit 50101 "MME Blob Service API"
     begin
         if not blobStorageAccount.FindFirst() then exit;
         //GET https://<accountname>.blob.core.windows.net/?comp=list&<sastoken>
-        if not client.Get(StrSubstNo('%1?comp=list&%2', blobStorageAccount."Account Url", blobStorageAccount."SaS Token"), response) then begin
-            response.Content.ReadAs(xmlContent);
+        if not client.Get(StrSubstNo('%1/?comp=list&%2', blobStorageAccount."Account Url", blobStorageAccount."SaS Token"), response) then begin
+            response.Content().ReadAs(xmlContent);
             exit;
         end;
         if not response.Content().ReadAs(xmlContent) then exit;
@@ -23,8 +23,7 @@ codeunit 50101 "MME Blob Service API"
         xmlDoc.GetRoot(root);
         root.WriteTo(xmlContent);
         if not root.SelectNodes('/*/Containers/Container/Name', nodes) then exit;
-        for i := 1 to nodes.Count() do begin
-            nodes.Get(i, node);
+        foreach node in nodes do begin
             containers.Init();
             containers.Name := node.AsXmlElement().InnerText();
 
@@ -60,8 +59,7 @@ codeunit 50101 "MME Blob Service API"
         xmlDoc.GetRoot(root);
         root.WriteTo(xmlContent);
         if not root.SelectNodes('/*/Blobs/Blob/Name', nodes) then exit;
-        for i := 1 to nodes.Count() do begin
-            nodes.Get(i, node);
+        foreach node in nodes do begin
             blobs.Init();
             blobs.Container := containerName;
             blobs.Name := node.AsXmlElement().InnerText();
@@ -113,12 +111,10 @@ codeunit 50101 "MME Blob Service API"
     procedure PutBlob(containerName: Text; blobName: Text; var text: Text): Boolean
     var
         blobStorageAccount: Record "MME BlobStorage Account";
-        memoryStream: Codeunit "MemoryStream Wrapper";
         client: HttpClient;
         response: HttpResponseMessage;
         content: HttpContent;
         headers: HttpHeaders;
-        len: Integer;
     begin
         if not blobStorageAccount.FindFirst() then exit;
 

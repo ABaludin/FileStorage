@@ -2,7 +2,7 @@ page 50100 "MME Storage Account Card"
 {
     PageType = Card;
     SourceTable = "MME BlobStorage Account";
-    Caption = 'Storage Account Setup';
+    Caption = 'Demo 2 Storage Account Setup';
     ApplicationArea = All;
     UsageCategory = Administration;
 
