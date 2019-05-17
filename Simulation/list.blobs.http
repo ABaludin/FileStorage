@@ -1,7 +1,7 @@
 ### Change these variables:
-@account = <storage-account-name>
-@container = <container-name>
-@sasToken = <sas-token>
+@account = csa
+@container = directions
+@sasToken = sv=
 ###
 
 ### LIST Blobs for Storage Account Container

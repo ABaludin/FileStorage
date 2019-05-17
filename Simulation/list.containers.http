@@ -1,6 +1,6 @@
 ### Change these variables:
-@account = <storage-account-name>
-@sasToken = <sas-token>
+@account = csa
+@sasToken = sv=
 ###
 
 ### LIST Containers for Storage Account
